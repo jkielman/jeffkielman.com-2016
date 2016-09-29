@@ -1,0 +1,313 @@
+
+@import "basscss";
+
+@font-face {
+    font-family:'colfax-web';
+    src: url('../fonts/ColfaxWebRegular.eot') format('embedded-opentype');
+    src: url('../fonts/ColfaxWebRegular.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+ font-family: "Atlas TR";
+ src: font-url('../fonts/atlas_typewriter_thin.eot');
+ src: font-url('../fonts/atlas_typewriter_thin.otf') format('otf'),
+      font-url('../fonts/atlas_typewriter_thin.woff') format('woff'),
+      font-url('../fonts/atlas_typewriter_thin.svg') format('svg'),
+      font-url('../fonts/atlas_typewriter_thin.ttf') format('truetype');
+ font-weight: 100;
+}
+
+@font-face {
+  font-family:'AtlasTypewriterRegular-Regular';
+  src: url('../fonts/AtlasTypewriterRegular_gdi.eot');
+  src: url('../fonts/AtlasTypewriterRegular_gdi.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/AtlasTypewriterRegular_gdi.woff') format('woff'),
+    url('../fonts/AtlasTypewriterRegular_gdi.ttf') format('truetype'),
+    url('../fonts/AtlasTypewriterRegular_gdi.svg#AtlasTypewriterRegular-Regular') format('svg');
+  font-weight: 200;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+$solidblk: #000;
+$lightblk:#141517;
+$blue: rgba(25,36,62,0.93);
+$yellow:#F5CE4D;
+$red:#D02D52;
+$white:#fff;
+$yellow:#ffa100;
+$grey: rgba(255,255,255,0.41);
+
+body {
+  background: $white;
+  color: $solidblk;
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 4vw;
+
+    @media all and (min-width: 39.8em){
+    font-size: 19px;}
+  margin:0;
+  padding:0;
+  font-family:'colfax-web';
+
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+img {
+  width:100%;
+}
+
+.round-shadow {border:1px #ccc solid; border-radius:5px; margin:80px 0;}
+
+span {
+  font-weight: 500;
+}
+
+h1,h2,h3,h4,h5,h6 { display:block;  font-weight:300;}
+
+h1 {
+  @media all and (max-width: 39.8em){ font-size:22px; }
+}
+h6 {margin:0;}
+
+a {
+  text-decoration:none;
+  color:$solidblk;
+
+//Buttons
+&.btn { color:$solidblk; border-bottom:1px solid $solidblk;
+  &.btn:hover { border-bottom:0; }
+ }
+}
+
+ul {padding-left:20px;}
+.sm {font-family: "Atlas TR"; font-size:12px; line-height:16px;}
+.shadow {    box-shadow: 0px 10px 40px 0px rgba(0,0,0,0.15);}
+.role { display: inline-block;
+  @media all and (max-width: 39.8em){
+    display: none;
+  }
+}
+
+.menu {
+  background-color:$blue ;
+  width: 100%;
+  position: fixed;
+  -webkit-transition: height 0.8s;
+  -moz-transition: height 0.8s;
+  transition: height 0.8s;
+  overflow: hidden;
+  position: fixed;
+  top: 0px;
+  bottom: 0;
+  left: 0;
+  color:$white;
+  height: 100%;
+  transition: all -webkit-transform 900ms cubic-bezier(0.19, 1, 0.22, 1) 0ms;
+  transition: all transform 900ms cubic-bezier(0.19, 1, 0.22, 1) 0ms;
+  @media all and (min-width: 39.8em){
+    font-size: 19px;}
+
+&.collapse {
+    height: 70px;
+@media all and (min-width: 39.8em){
+  height: 90px;
+}
+}
+a {color:$white;}
+}
+p {
+  a {text-decoration:underline;
+&:hover {text-decoration:none;}
+  }
+  margin-top:0;
+}
+.bgblk {background-color:$solidblk; color:#fff;
+.btn {color:#fff; border-color:$white;}
+}
+nav {
+  display: block;
+a {
+  &:hover:after {
+
+
+    @media all and (min-width: 39.8em){
+
+    content: url(../images/arrow-right.svg);
+
+    }
+    margin-left: 5px;
+  }
+   }
+      ul{padding:0; margin:0;
+           li {list-style:none; text-indent:0;
+                  line-height: 25px;
+              @media all and (min-width: 39.8em){ font-size:1.6em; line-height:1.5em;  }
+
+           }
+      }
+}
+
+a.info {
+    background: $yellow;
+    display: block;
+    height: 17px;
+    width: 17px;
+    border-radius: 50px;
+    padding:5px 0px 10px 15px;
+      &::after {
+      content: 'About';
+      margin: 23px;
+      }
+}
+
+.close {
+    background:$lightblk url(../images/arrow-up.svg) no-repeat;
+   background-position: 65% 30%;
+    display: block;
+    height: 15px;
+    width: 15px;
+    text-align: center;
+    padding:5px 7px 12px 10px;
+    cursor: pointer;
+
+  @media all and (max-width: 39.8em){
+      right: 55px;
+      position: absolute;
+    }
+
+    &::after {
+      content: '';
+      margin: 0 0 0 35px;
+      top:-10px;
+        @media all and (min-width: 39.8em){  content: 'Close';}
+    }
+}
+
+.close.open {
+    background:$lightblk url(../images/arrow-down.svg) no-repeat;
+   background-position: 65% 30%;
+    display: block;
+    height: 15px;
+    width: 15px;
+    text-align: center;
+    padding:5px 7px 12px 10px;
+    top:27px;
+    position:absolute;
+    &::after {
+    content: '';
+    margin: 0 0 0 35px;
+    top:-10px;
+    @media all and (min-width: 39.8em){  content: 'Index';}
+    }
+}
+
+.nav-loader {
+  opacity:0;
+  top:33px;
+  right:25px;
+  position:absolute;
+}
+
+.is-loading {
+    .nav-loader  {opacity:1;}
+}
+
+@-webkit-keyframes loading {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes loading {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-o-keyframes loading {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes loading {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.loading-text {
+  -webkit-animation: loading 0.1s infinite;
+  -moz-animation:    loading 0.1s infinite;
+  -o-animation:      loading 0.1s infinite;
+  animation:         loading 0.1s infinite;
+}
+
+.project  {
+    .col.col-12 {
+      height:100vh;
+
+        @media all and (max-width: 39.8em){
+    height: 350px;}
+
+      display:block;
+      width:100%;
+    }
+}
+
+.pt3-sm {
+  @media all and (max-width: 39.8em){
+
+  padding-top:0;
+}
+
+}
+
+
+
+
+a {
+
+&.previous-project {
+
+  &::before { content: url('../images/arrow-left.svg');}
+
+}
+
+&.next-project {
+
+  &::after {content: url('../images/arrow-right.svg');}
+
+
+
+
+
+}
+
+}
+
+
+footer {
+  position:relative;
+  text-align:center;
+  width:100%;
+  float:left;
+
+    @media (min-height: 700px) {
+        bottom:0;
+        padding:25px 0 25px 0;
+    }
+
+    @media all and (min-width: 39.8em){ text-align:left;}
+
+    a {text-decoration:none;
+          &:hover {text-decoration:underline;}
+    }
+}
+
+
+
+
+
