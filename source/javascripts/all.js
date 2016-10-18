@@ -151,14 +151,15 @@ $(function(){
                 .find("#load-content")
                 .fadeOut(200, function() {
                     $mainContent.hide().load(href + " #load-content", function() {
-
                         $(window).scrollTop(0,0);
-                        $mainContent.fadeIn(500, function() {
+
+                        $mainContent.fadeIn(200, function() {
                             $pageWrap.animate({
                                 height: baseHeight + $mainContent.height() + "px"
 
                             });
-                                                       	retinajs();
+
+
 
                         $(".nav-loader").hide();
                         });
@@ -195,7 +196,6 @@ if($("nav a").data('clicked')) {
 });
 
 
-var ul = document.querySelector('.project');
-for (var i = ul.children.length; i >= 0; i--) {
-    ul.appendChild(ul.children[Math.random() * i | 0]);
-}
+
+
+
